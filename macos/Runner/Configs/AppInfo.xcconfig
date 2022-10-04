@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = passport_university_for_unsa
+PRODUCT_NAME = Passport University for UNSA;
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = codes.wondercode.passportUniversityForUnsa
+PRODUCT_BUNDLE_IDENTIFIER = com.dmickeyc.passportuniversity;
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2022 codes.wondercode. All rights reserved.

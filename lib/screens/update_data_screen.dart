@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 
 class UpdateDataScreen extends StatefulWidget {
   const UpdateDataScreen({Key? key}) : super(key: key);
@@ -34,7 +35,28 @@ class _UpdateDataScreenState extends State<UpdateDataScreen> {
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.pop(context, codeStudent);            
+                  if(codeStudent==""){
+                    AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.error,
+                          animType: AnimType.rightSlide,
+                          title: 'Código Invalido',
+                          desc: 'No has ingreso ningún código',
+                      btnCancelOnPress: () {},
+                    )..show();
+                  }else{
+                    FocusManager.instance.primaryFocus?.unfocus();
+                    AwesomeDialog(
+                    context: context,
+                    dialogType: DialogType.success,
+                    animType: AnimType.rightSlide,
+                    title: 'Codigo generado',
+                    desc: 'Tu codigo se genero con éxito',
+                    btnOkOnPress: () {
+                    Navigator.pop(context, codeStudent);
+                    },
+                  )..show();
+                  }
                 },
                 icon: const Icon(Icons.fiber_new_rounded),
                 label: const Text("Generar Codigo de barras"),
@@ -43,7 +65,7 @@ class _UpdateDataScreenState extends State<UpdateDataScreen> {
             const Expanded(
                 child: FittedBox(
                     child:
-                        Icon(Icons.camera_front_rounded, color: Colors.indigo))),
+                        Icon(Icons.camera_front_rounded, color: Colors.teal))),
           ],
         ),
       ),
