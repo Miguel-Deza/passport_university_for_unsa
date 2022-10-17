@@ -192,6 +192,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             BarcodeWidget(
                 padding: const EdgeInsets.all(20),
+                backgroundColor: Colors.red,
                 height: 100.0,
                 barcode: Barcode.code39(),
                 data: futureCodeStudent ?? '',
